@@ -6,6 +6,7 @@ class Player{
   int maxhealth;
   int currenthealth;
   boolean isgettinghit;
+  boolean verloren;
   
   int radius;
   
@@ -88,7 +89,14 @@ class Player{
       isgettinghit = true;
     }
     if(isgettinghit){
-      currenthealth--;
+      if(currenthealth>0){  // nur erniedrigen, wenn das aktuelle Leben noch größer als 0 ist, damit roter Balken nicht aus Bildschirm geht
+        currenthealth--;
+      }
+      else if(currenthealth==0){  // klar machen, wann man verloren hat.
+        println("Verloren");
+        
+        verloren = true;
+      }
     }
     else{
       if(currenthealth < maxhealth){
