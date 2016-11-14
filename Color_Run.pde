@@ -18,7 +18,7 @@ void setup(){
   rectMode(CORNER);
   drawBackground(); // Zeichnet den Hintergrund vor damit dieser in das pixels[]-Array geladen werden kann
   loadPixels(); // lädt den Bildschirm in das pixels[]-Array
-  start = new Button("Start",50,50,900,200);
+  start = new Button("Start",50,50,900,200,color(255,255,255),color(255,255,0),color(255,0,255),50);
 }
 
 void draw(){
@@ -79,6 +79,8 @@ void drawBackground(){
   fill(0,51,102);
   rect(width*3/4,0,width/4,height);
 }
+
+
 void mousemovement(){ // bewegt Spieler immer in Richtung der Maus, außer er ist bereits näher als 10 pixel dran
   if(mousePressed){
     if (Math.abs(mouseX-p.xcoord) < 10){
