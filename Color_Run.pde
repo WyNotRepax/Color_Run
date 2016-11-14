@@ -33,6 +33,7 @@ void draw(){
   if(inShop){
     
   }
+  text("Hello"
 }
 
 void keyPressed(){
