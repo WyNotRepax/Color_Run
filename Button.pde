@@ -21,7 +21,7 @@ class Button {
     textColor = textColorB;
   }
   
-  void Draw() {
+  void display() {
     fill(col);
     strokeWeight(2);
     stroke(colStroke);

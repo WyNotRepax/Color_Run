@@ -31,7 +31,18 @@ class Player{
   }
   
   void update(){
-  if (moveup == true){
+    this.movupdate();
+    if (timefromchange > changedelay){
+      colnum = round(random(1,4)); //<>//
+      changedelay = 7*int(frameRate);// Delay an Framerate Anpassen
+      timefromchange = 0;
+    }
+    this.hitdetection();
+    timefromchange++;
+  }
+  
+  void movupdate(){
+    if (moveup == true){
       if (ycoord > 0){
       ycoord -= yspeed;
       }
@@ -48,13 +59,6 @@ class Player{
       xcoord -= xspeed;
       }
     }
-    if (timefromchange > changedelay){
-      colnum = round(random(1,4)); //<>//
-      changedelay = 7*int(frameRate);// Delay an Framerate Anpassen
-      timefromchange = 0;
-    }
-    this.hitdetection();
-    timefromchange++;
   }
   
   void display(){
@@ -94,7 +98,6 @@ class Player{
       }
       else if(currenthealth==0){  // klar machen, wann man verloren hat.
         println("Verloren");
-        
         verloren = true;
       }
     }
