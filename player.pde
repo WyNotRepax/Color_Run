@@ -78,7 +78,7 @@ class Player{
     fill(0); // Zeichnet Lebensanzeige in der Ecke des Bildschirms
     rect(10,10,500,70);
     fill(255,0,0);
-    rect(20,20,map(currenthealth,0,maxhealth,20,480),50);
+    rect(20,20,map(currenthealth,0,maxhealth,0,480),50);
   }
   
   void hitdetection(){
