@@ -16,10 +16,10 @@ class Button {
   void Draw() {
     fill(218);
     stroke(141);
-    rect(x, y, w, h, 10);
-    textAlign(CENTER, CENTER);
+    rect(x, y, w, h);
     fill(0);
-    text(label, x + (w / 2), y + (h / 2));
+    textSize(h*0.9);
+    text(label, x, y, x+w,y+h);
   }
   
   boolean MouseIsOver() {

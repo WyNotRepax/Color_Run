@@ -4,7 +4,7 @@
 
 Player p;
 boolean mousemovement = true;
-
+Button start;
 
 boolean inGame;
 boolean inMainMenu;
@@ -18,6 +18,7 @@ void setup(){
   rectMode(CORNER);
   drawBackground(); // Zeichnet den Hintergrund vor damit dieser in das pixels[]-Array geladen werden kann
   loadPixels(); // lädt den Bildschirm in das pixels[]-Array
+  start = new Button("Start",50,50,900,200);
 }
 
 void draw(){
@@ -33,7 +34,8 @@ void draw(){
   if(inShop){
     
   }
-  text("Hello"
+  
+  start.Draw();
 }
 
 void keyPressed(){
