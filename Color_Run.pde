@@ -19,8 +19,8 @@ void setup(){
   rectMode(CORNER);
   drawBackground(); // Zeichnet den Hintergrund vor damit dieser in das pixels[]-Array geladen werden kann
   loadPixels(); // lädt den Bildschirm in das pixels[]-Array
-  start = new Button("Start",width*3/8,50,width/4,150, (0),(255),(255),(140));
-  //shop = new Button("Shop",width*3/8,300,width/4,150);
+  start = new Button("Start",width*3/8,height/5,width/4,height/5, (0),(255),(255),(140));
+  shop = new Button("Shop",width*3/8,height*3/5,width/4,height/5, (0),(255),(255),(140));
 }
 
 void draw(){
@@ -32,7 +32,7 @@ void draw(){
   }
   if(inMainMenu){
     start.Draw();
-    //shop.Draw();
+    shop.Draw();
   }
   if(inShop){
     
