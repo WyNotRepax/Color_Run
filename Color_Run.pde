@@ -16,7 +16,6 @@ void draw(){
   drawBackground();
   p.update();
   p.display();
-  println("test");
 }
 
 void keyPressed(){
