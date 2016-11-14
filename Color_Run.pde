@@ -5,20 +5,22 @@
 Player p;
 boolean mousemovement = true;
 Button start;
+Button shop;
 
 boolean inGame;
 boolean inMainMenu;
 boolean inShop;
 
 void setup(){
-  inGame = true;
+  inMainMenu = true;
   fullScreen();
   orientation(LANDSCAPE); // Einstellung damit das Spiel auf dem Handy im Querformat angezeigt werden kann
   p = new Player(width/2,height/2); // Spieler startet in der mitte des Bildschirms
   rectMode(CORNER);
   drawBackground(); // Zeichnet den Hintergrund vor damit dieser in das pixels[]-Array geladen werden kann
   loadPixels(); // lädt den Bildschirm in das pixels[]-Array
-  start = new Button("Start",50,50,900,200);
+  start = new Button("Start",width*3/8,50,width/4,150);
+  shop = new Button("Shop",width*3/8,300,width/4,150);
 }
 
 void draw(){
@@ -29,13 +31,14 @@ void draw(){
     p.display();
   }
   if(inMainMenu){
-    
+    start.Draw();
+    shop.Draw();
   }
   if(inShop){
     
   }
   
-  start.Draw();
+  
 }
 
 void keyPressed(){
