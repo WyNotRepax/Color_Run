@@ -1,8 +1,16 @@
 //Kannst du versuchen deine Anderungen zu Kommentieren (Kommentar wird mit " // " eingeleitet oder beginnt mit " /* " und endet mit " */ ")
 
+
+
 Player p;
 boolean mousemovement = true;
+
+
+boolean inGame;
+boolean inMainMenu;
+boolean inShop;
 void setup(){
+  
   fullScreen();
   orientation(LANDSCAPE); // Einstellung damit das Spiel auf dem Handy im Querformat angezeigt werden kann
   p = new Player(width/2,height/2); // Spieler startet in der mitte des Bildschirms
