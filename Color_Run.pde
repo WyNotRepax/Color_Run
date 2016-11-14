@@ -9,8 +9,9 @@ boolean mousemovement = true;
 boolean inGame;
 boolean inMainMenu;
 boolean inShop;
+
 void setup(){
-  
+  inGame = true;
   fullScreen();
   orientation(LANDSCAPE); // Einstellung damit das Spiel auf dem Handy im Querformat angezeigt werden kann
   p = new Player(width/2,height/2); // Spieler startet in der mitte des Bildschirms
@@ -20,10 +21,18 @@ void setup(){
 }
 
 void draw(){
-  if (mousemovement){mousemovement();} // verwendet Maussteuerung wenn mousemovement == true
-  drawBackground();
-  p.update();
-  p.display();
+  if(inGame){
+    if (mousemovement){mousemovement();} // verwendet Maussteuerung wenn mousemovement == true
+    drawBackground();
+    p.update();
+    p.display();
+  }
+  if(inMainMenu){
+    
+  }
+  if(inShop){
+    
+  }
 }
 
 void keyPressed(){
