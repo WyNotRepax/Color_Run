@@ -4,25 +4,35 @@ class Button {
   float y;    // top left corner y position
   float w;    // width of button
   float h;    // height of button
+  int t;
+  color col;
+  color colStroke;
+  color textColor;
   
-  Button(String labelB, float xpos, float ypos, float widthB, float heightB) {
+  Button(String labelB, float xpos, float ypos, float widthB, float heightB, color colB, color colStrokeB,color textColorB, int textsize) {
     label = labelB;
     x = xpos;
     y = ypos;
     w = widthB;
     h = heightB;
+    t = textsize;
+    col = colB;
+    colStroke = colStrokeB;
+    textColor = textColorB;
   }
   
   void Draw() {
-    fill(218);
-    stroke(141);
+    fill(col);
+    strokeWeight(2);
+    stroke(colStroke);
     rect(x, y, w, h);
-    fill(0);
-    textSize(h*0.9);
-    text(label, x, y, x+w,y+h);
+    fill(textColor);
+    textAlign(CENTER,CENTER);
+    textSize(t);
+    text(label,x+(w/2),y+(h/2));
   }
   
-  boolean MouseIsOver() {
+  boolean IsClicked() {
     if (mouseX > x && mouseX < (x + w) && mouseY > y && mouseY < (y + h)) {
       return true;
     }
