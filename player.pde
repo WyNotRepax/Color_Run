@@ -49,7 +49,7 @@ class Player{
     } if (movedown == true){
       if (ycoord < height){
       ycoord += yspeed;
-      }
+      } //<>//
     } if (moveright == true){
       if (xcoord < width){
       xcoord += xspeed;
