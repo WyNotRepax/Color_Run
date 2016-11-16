@@ -21,12 +21,13 @@ boolean inOptions;
 ArrayList<MovingSphere> MainMenuBackgroundShperes;
 
 void setup(){
-  inMainMenu = true;
+  inMainMenu = false;
+  inGame = true;
   fullScreen();
   orientation(LANDSCAPE); // Einstellung damit das Spiel auf dem Handy im Querformat angezeigt werden kann
   p = new Player(width/2,height/2); // Spieler startet in der mitte des Bildschirms
   rectMode(CORNER);
-  //drawinGameBackground(); // Zeichnet den Hintergrund vor damit dieser in das pixels[]-Array geladen werden kann
+  drawinGameBackground(); // Zeichnet den Hintergrund vor damit dieser in das pixels[]-Array geladen werden kann
   loadPixels(); // lädt den Bildschirm in das pixels[]-Array
   start = new Button("Start",width/4,height/10,width/2,height*2/10, color(102,255,178),color(255),color(255),140);
   shop = new Button("Shop",width/4,height*4/10,width/2,height*2/10, color(255,178,102),color(255),color(255),140);
